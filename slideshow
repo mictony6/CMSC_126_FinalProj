@@ -1,0 +1,89 @@
+html
+
+<div class="slideshow-container fade">
+
+    <div class="Containers">
+        <img src=" ">
+    </div>
+
+    <div class="Containers">
+        <img src=" ">
+    </div>
+
+    <div class="Containers">
+        <img src=" ">
+    </div>
+</div>
+<br>
+
+<div style="text-align:center">
+    <span class="dots" onclick="currentSlide(1)"></span>
+    <span class="dots" onclick="currentSlide(2)"></span>
+    <span class="dots" onclick="currentSlide(3)"></span>
+</div>
+
+css:
+
+.slideshow-container {
+max-width: 100%;
+margin: auto;
+}
+
+.Containers {
+display: none;
+box-sizing: border-box;
+}
+
+.Containers img {
+width: 100%;
+}
+
+.Back:hover, .forward:hover {
+background-color: rgba(0,0,0,0.8);
+}
+
+.dots {
+cursor: pointer;
+height: 16px;
+width: 16px;
+margin: 0 3px;
+background-color: #acc;
+border-radius: 50%;
+display: inline-block;
+transition: background-color 0.5s ease;
+}
+
+.enable, .dots:hover {
+background-color: #717161;
+}
+
+.fade {
+-webkit-animation-name: fade;
+-webkit-animation-duration: 1.4s;
+animation-name: fade;
+animation-duration: 1.4s;
+}
+
+@-webkit-keyframes fade {
+from {opacity: .5}
+to {opacity: 2}
+}
+
+@keyframes fade {
+from {opacity: .5}
+to {opacity: 2}
+}
+
+js
+
+var slidePosition = 0;
+SlideShow();
+
+function SlideShow() {
+var i;
+var slides = document.getElementsByClassName("Containers");
+for (i = 0; i < slides.length; i++) { slides[i].style.display="none" ; } slidePosition++; if (slidePosition>
+    slides.length) {slidePosition = 1}
+    slides[slidePosition-1].style.display = "block";
+    setTimeout(SlideShow, 2000);
+    }
