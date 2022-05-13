@@ -1,11 +1,17 @@
-var slidePosition = 0;
-SlideShow();
-
-function SlideShow() {
-var i;
-var slides = document.getElementsByClassName("Containers");
-for (i = 0; i < slides.length; i++) { slides[i].style.display="none" ; } slidePosition++; if (slidePosition>
-    slides.length) {slidePosition = 1}
-    slides[slidePosition-1].style.display = "block";
-    setTimeout(SlideShow, 2000);
+var slides = document.getElementsByClassName("slide");
+let currentSlide = 0;
+function slideShow() {
+    let n = slides.length;
+    for (let i = 0; i < n; i++) {
+        slides[i].style.display = "none";
     }
+    slides[currentSlide].style.display = "block";
+    currentSlide++;
+    currentSlide %= n;
+    setTimeout(slideShow, 5000);
+
+}
+
+
+
+slideShow();

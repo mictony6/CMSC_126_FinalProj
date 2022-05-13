@@ -6,6 +6,7 @@ body {
     background-color: whitesmoke;
     width: 100%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-x: hidden;
 
 
 
@@ -16,7 +17,6 @@ body {
 
 .grid-container {
     /* background-image: url("/res/geometric-leaves.png"); */
-
     color: black;
     padding: 0 5%;
     width: 90%;
@@ -98,7 +98,6 @@ body {
 }
 
 .profile-pic img {
-
     max-width: 100%;
     max-height: 100%;
     object-fit: cover;
@@ -112,6 +111,7 @@ body {
 }
 
 .slide {
+    overflow: hidden;
     float: left;
     height: 100%;
     width: 100%;
@@ -183,6 +183,35 @@ footer div {
     border-radius: 2px;
 }
 
+.fade {
+    animation: slideRight 5s infinite;
+    position: relative;
+}
+
+@keyframes slideRight {
+    0% {
+        opacity: 0%;
+        transform: translate(100%);
+    }
+
+    25% {
+        opacity: 100%;
+        transform: translate(0%);
+    }
+
+    75% {
+        opacity: 100%;
+        transform: translate(0%);
+    }
+
+
+    100% {
+        opacity: 0%;
+        transform: translate(-100%);
+    }
+
+}
+
 /* 
 DEBUG */
 /* .grid-container {
@@ -194,66 +223,3 @@ DEBUG */
 footer {
     border: solid 2px black
 } */
-
-
-.slideshow-container {
-    max-width: 100%;
-    margin: auto;
-}
-
-.Containers {
-    display: none;
-    box-sizing: border-box;
-}
-
-.Containers img {
-    width: 100%;
-}
-
-.Back:hover,
-.forward:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.dots {
-    cursor: pointer;
-    height: 16px;
-    width: 16px;
-    margin: 0 3px;
-    background-color: #acc;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.5s ease;
-}
-
-.enable,
-.dots:hover {
-    background-color: #717161;
-}
-
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.4s;
-    animation-name: fade;
-    animation-duration: 1.4s;
-}
-
-@-webkit-keyframes fade {
-    from {
-        opacity: .5
-    }
-
-    to {
-        opacity: 2
-    }
-}
-
-@keyframes fade {
-    from {
-        opacity: .5
-    }
-
-    to {
-        opacity: 2
-    }
-}
