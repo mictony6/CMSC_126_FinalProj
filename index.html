@@ -8,17 +8,19 @@
 </head>
 
 <body>
-    <div class="grid-container">
-        <div class="header">
-            <div class="title">Michael Anthony Bitoon <div class="sub-title">3D Artist</div>
-            </div>
-            <div class="nav">
-                <a class="active" href="" class="home">Home</a>
-                <a href="" class="commisions">Commissions</a>
-                <a href="" class="about">About</a>
-            </div>
+    <div class="header">
+        <div class="title">Michael Anthony Bitoon <div class="sub-title">3D Artist</div>
         </div>
-        <div class="description">
+        <div class="nav">
+            <a href="/index.html" id="home">Home</a>
+            <a href="/commissions.html" id="commissions">Commissions</a>
+            <a href="/about.html" id="about">About</a>
+        </div>
+    </div>
+    <br>
+    <div class="grid-container">
+
+        <div class="description ">
             <h1>Hello,</h1>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta repellendus repellat nemo quia. Voluptas vel
             eligendi, dolores pariatur et eius voluptates blanditiis sunt cupiditate nemo doloribus reiciendis possimus,
@@ -28,17 +30,28 @@
             quas expedita doloremque a, ad quis fugiat sequi, rem repellendus nemo reprehenderit quia eveniet laudantium
             ipsum possimus quae. Ipsa dignissimos voluptates velit, vel adipisci ratione quas obcaecati veritatis,
             eligendi fugiat vitae minima!
-        </div>
-        <div class="profile-pic">
-            <img id="my-pic" src="res/profile_pic.jpg" alt="">
-            <div class="goto">
-                <a href="#commisions">Go to gallery &#10095; </a>
 
+            <div class="banner">
+                <img src="/res/banner.jpg" alt="">
+            </div>
+        </div>
+        <div class="profile-pic ">
+            <img id="my-pic" src="res/profile_pic.jpg" alt="">
+
+
+
+            <div class="overlay">
+                <div class="goto">
+                    <a href="/commissions.html">Go to gallery &#10095; </a>
+                </div>
             </div>
 
         </div>
 
         <div class="slideshow">
+            <div class="slide-label">
+                <h1>Featured Artworks</h1>
+            </div>
             <div class="slide fade">
                 <img src="res/slideshow/art_1.jpg" alt="">
             </div>
@@ -55,21 +68,14 @@
             <a href="#facebook"><img src="res/icons/tumblr_logo.png" alt=""></a>
             <a href="#facebook"><img src="res/icons/twitter_logo.png" alt=""></a>
         </div>
-
-
-        <footer>
-            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quaerat sapiente consequatur deleniti
-                voluptates sint. Ipsam debitis ducimus nobis nesciunt.</div>
-            <div>Copyright 2020.</div>
-        </footer>
-
-
-
     </div>
-
-
+    <footer>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quaerat sapiente consequatur deleniti
+            voluptates sint. Ipsam debitis ducimus nobis nesciunt.</div>
+        <div>Copyright 2020.</div>
+    </footer>
 </body>
 
-<script src="js/script.js"></script>
+<script src="js/home.js"></script>
 
 </html>
