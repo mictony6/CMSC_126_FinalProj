@@ -2,20 +2,32 @@
     box-sizing: border-box;
 }
 
+
+
 :root {
     --front: #f6f5f0;
     --blackish: #2d2d2b;
-    --tint-black: #2d2b2b77;
+    --tin-black: #2d2d2b71;
     --powder: #f0e4d8;
     --supple: #c39e9e;
-    --base: #F7C066;
-    --left: #E6D2F5;
-    --right: #DCE2F6;
+    --base: grey;
+    --alt: #F7C066;
+
+
+    --text-font: 'Open Sans', 'Helvetica Neue', sans-serif;
+    --title-font: 'Lato', sans-serif;
+
 }
 
 html {
     height: 100vh;
 
+}
+
+
+.centered {
+    margin: 2% 5%;
+    width: 90%;
 }
 
 body {
@@ -47,7 +59,7 @@ body {
 
 
 header {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--title-font);
     color: var(--powder);
     background-color: var(--blackish);
     display: flex;
@@ -91,13 +103,13 @@ header {
 
 
 .top {
+    font-family: var(--text-font);
     background-color: var(--blackish);
     border-radius: 30px;
 
 
     position: relative;
-    margin: 2% 5%;
-    width: 90%;
+
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr 1fr;
@@ -106,7 +118,6 @@ header {
         "event event event event pic pic";
 
     gap: 10px;
-
     flex-shrink: 0;
     padding: 10px;
 }
@@ -120,7 +131,7 @@ summary h1 {
 
 
 .summary p {
-    font-size: 17px;
+    font-size: 20px;
     line-height: 27px;
     font-weight: normal;
     text-indent: 40px;
@@ -128,8 +139,8 @@ summary h1 {
 }
 
 .summary {
+
     border-radius: 30px 0px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     padding: 2%;
     background: linear-gradient(180deg, white, white, var(--powder));
     grid-area: desc;
@@ -137,9 +148,6 @@ summary h1 {
     flex-flow: column wrap;
     justify-content: space-around;
     transition: all 1s;
-
-
-
 
 
 }
@@ -234,8 +242,6 @@ summary h1 {
 .slideshow {
 
     background-color: var(--powder);
-
-
     flex-shrink: 0;
     margin: 2% 5%;
     width: 90%;
@@ -244,9 +250,12 @@ summary h1 {
     column-gap: 10px;
     overflow: hidden;
     border: var(--powder) 20px solid;
+}
 
-
-
+.slideshow:hover,
+.top:hover {
+    box-shadow: 0px 50px 50px 0px var(--tin-black);
+    transition: all 1s;
 }
 
 
@@ -376,6 +385,119 @@ footer {
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 17px;
+    background-color: var(--blackish);
+    color: var(--powder);
 
 
+}
+
+
+.artist-card {
+    background-color: var(--powder);
+    margin: 10px;
+    height: 20vh;
+    display: flex;
+}
+
+
+
+.artist-card img {
+    aspect-ratio: 1/1;
+    object-fit: contain;
+    width: 10%;
+    flex-shrink: 0;
+    margin: 5px;
+}
+
+.artist-card p {
+    width: 90%;
+    font-family: var(--text-font);
+    font-size: 17px;
+    align-self: center;
+}
+
+
+
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    height: 50vh;
+
+}
+
+
+
+.card-title {
+    font-family: 'Noto Serif', serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+.details-card {
+    width: 30%;
+    height: 100%;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 50px;
+    z-index: -2;
+
+}
+
+.details-card:nth-child(even) {
+    animation: slideDown 1s ease 1;
+
+
+}
+
+.details-card:nth-child(odd) {
+    animation: slideUp 1s ease 1;
+
+}
+
+.details-card ul {
+    text-indent: 0px;
+    padding: 0px;
+}
+
+
+
+.details-card ul li {
+    margin-bottom: 20px;
+    list-style-type: none;
+    font-family: var(--text-font);
+    font-size: 17px;
+}
+
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(50%);
+        overflow-y: hidden;
+    }
+
+
+    100% {
+        transform: translateY(0%);
+        overflow-y: auto;
+
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-50%);
+        overflow-y: hidden;
+
+    }
+
+
+    100% {
+        transform: translateY(0%);
+        overflow-y: auto;
+
+    }
 }
